@@ -5,7 +5,7 @@ ENV HOME /home/jenkins-slave
 
 # install netstat to allow connection health check with
 # netstat -tan | grep ESTABLISHED
-RUN apk add --no-cache curl git docker
+RUN apk add --no-cache curl git docker bash
 
 RUN adduser -D -h $HOME jenkins-slave
 RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar \
